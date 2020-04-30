@@ -1,4 +1,4 @@
-# React Store Porject —
+# React Store Porject
 
 ## To Start
 
