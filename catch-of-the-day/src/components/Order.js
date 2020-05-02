@@ -1,8 +1,21 @@
 import React from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import PropTypes from 'prop-types';
 import { formatPrice } from '../helpers';
 
 class Order extends React.Component {
+  static propTypes = {
+    fishes: PropTypes.shape({
+         	    name: PropTypes.string,
+        	    price: PropTypes.number,
+        	    status: PropTypes.string,
+        	    desc: PropTypes.string,
+        	    image: PropTypes.string
+        	}).isRequired,
+    order: PropTypes.objectOf(PropTypes.number),
+    removeFromOrder: PropTypes.func
+  };
+
   renderOrder = (key) => {
     const fish = this.props.fishes[key];
     const count = this.props.order[key];
@@ -12,7 +25,7 @@ class Order extends React.Component {
       key,
       timeout: { enter: 500, exit: 500 }
     };
-    
+
     // Make sure the fish is loadad before we continue
     if (!fish) return null;
 
