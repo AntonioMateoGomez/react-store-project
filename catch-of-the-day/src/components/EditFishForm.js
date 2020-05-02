@@ -23,7 +23,7 @@ class EditFishForm extends React.Component {
       [event.currentTarget.name]: event.currentTarget.name === "price" ? parseFloat(event.currentTarget.value) : event.currentTarget.value,
     };
     // 2. call the App.js method to update the state
-    this.props.updatedFish(this.props.index, updatedFish);
+    this.props.updateFish(this.props.index, updatedFish);
   };
 
   render() {
