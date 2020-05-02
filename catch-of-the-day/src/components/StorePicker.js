@@ -1,7 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getFunName } from '../helpers';
 
 class StorePicker extends React.Component {
+  static propTypes = {
+    history: PropTypes.object
+  };
+
   myInput = React.createRef();
 
   // This sintax allow us to bind the method otherwise we should use
